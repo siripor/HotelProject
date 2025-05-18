@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จำลองระบบจองโรงแรม</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+      
+        <div class="narbar"><!--narbar-->
+          <div class="narbar1">
+                <a href="#hotelForm">ตั๋วเครื่องบิน+ที่พัก</a>
+                 <a href="#">ที่พัก</a>
+               <div>
+                
+                   <select class="transport" >
+                   <option value="">บริการเดินทางขนส่ง</option>
+                   <option value="">ตั๋วเครื่องบิน</option>
+                   <option value="">รถบัส</option>
+
+                   <option value="">รถไฟ</option>
+                   <option value="">เรือเฟอร์รารี่</option>
+                   <option value="">บริการรับส่งสนามบิน</option>
+                   <option value="">บริการเช่ารถ</option>
+                   </select>
+               </div>
+              
+
+            
+                <div class="dropdown">
+                                
+                    <img src="image/more.png" width="30px"  height="30px" id="menuTrigger">
+                      <!---
+                     <div class="dropdown-content">
+                      <a href="#">ทัวร์และตั๋วท่องเที่ยว</a>
+                      <a href="#">คูปองส่วนลด + ข้อเสนอพิเศษ</a>
+                      <a href="#">eSim (ซิมดิจิทัล)</a>
+                      <a href="#">คู่มือท่องเที่ยว)</a>
+                    </div> -->
+                  
+                </div>
+             
+            </div>
+           
+        
+             <div class="narbar2">
+                 <img src="image/thailand.png"width="35" height="35">
+        
+                  <img src="image/bath.png" width="35" height="35">
+        
+                  <a href="register.html" target="_blank" rel="noopener noreferrer" class="register">สมัครสมาชิก</a><!--สมัครสมาชิก-->
+
+                  <a href="login.html" target="_blank" rel="noopener noreferrer" class="register">เข้าสู่ระบบ</a><!--เข้าระบบ-->
+                  
+       
+        
+                 <img src="image/shopping-cart.png" width="35" height="35">
+       
+                 <img src="image/open-menu.png" width="35" height="35">
+            </div>
+        </div>
+
+
+    
+
+   
+
+    <!------กดค้นหา รร--------->
+ 
+<h4 class="text">ท่องโลกทั้งใบให้ราคาถูกลง</h4>
+  
+    
+        <!-- แบบฟอร์มที่พัก -->
+       
+<div class="navbarSearch">
+            
+<button onclick="showForm('hotelForm')">ที่พัก</button>
+<button onclick="showForm('homeForm')">บ้านและอพาร์ตเมนต์</button>
+<button onclick="showForm('flightHotelForm')">ตั๋วเครื่องบิน + ที่พัก</button>
+<button onclick="showForm('flightForm')">ตั๋วเครื่องบิน</button>
+<button onclick="showForm('tourForm')">ทัวร์และตั๋วท่องเที่ยว</button>
+<button onclick="showForm('carServiceForm')">บริการรับส่งสนามบิน</button>
+</div>
+            <div class="form-container">
+             
+              <!-- แบบฟอร์มที่พัก -->
+
+              <div id="hotelForm" class="form hidden" >
+                <h2>ค้นหาที่พัก</h2>
+                <!--<button type="button" class="typeofplace">การเข้าพักข้ามคืน</button>-->
+            
+              
+                <input name="location"type="text" id="locationInput" class="location" placeholder="กรุงเทพ" value="country">
+              
+                <input name="checkInDate" type="date" id="checkInDate">
+                <input name="checkOutDate"type="date" id="checkOutDate">
+              
+                <select id="guests">
+                  <option value="2">ผู้ใหญ่ 2 ท่าน</option>
+                  <option value="1">ผู้ใหญ่ 1 ท่าน</option>
+                  <option value="3">ผู้ใหญ่ 3 ท่าน</option>
+                  <option value="4">ผู้ใหญ่ 4 ท่าน</option>
+                </select>
+              
+               <button id="btnSearch" onclick="btnSearch()""type="button">ค้นหา</button>
+             
+               </div>
+            
+              <!-- แบบฟอร์มบ้านและอพาร์ตเมนต์ -->
+              <div id="homeForm" class="form hidden">
+                <h2>ค้นหาบ้านและอพาร์ตเมนต์</h2>
+                <input type="text" placeholder="เมือง">
+                <input type="date" placeholder="วันที่เข้าพัก">วันที่เข้าพัก
+                <input type="date" placeholder="วันที่เข้าออก">วันที่เข้าออก
+                <button>ค้นหา</button>
+              </div>
+            
+              <!-- แบบฟอร์มตั๋วเครื่องบิน + ที่พัก -->
+              <div id="flightHotelForm" class="form hidden">
+                <h2>จองตั๋วเครื่องบิน + ที่พัก</h2>
+                <select>
+                <option value="">ไป-กลับ</option>
+                <option value="">เที่ยวเดียว</option>
+                </select>
+
+                <select>
+                  <option value="">ชั้นประหยัด</option>
+                  <option value="">ชั้นประหยัดพรีเมียม</option>
+                  <option value="">ชั้นธุรกิจ</option>
+                  <option value="">ชั้นเฟิร์สคลาส</option>
+                </select>
+                
+                <input type="text" placeholder="ปลายทาง">
+                <input type="date">
+                <input type="number" placeholder="จำนวนคน">
+                <input type="number" placeholder="จำนวนห้อง">
+                <input type="checkbox">ค้นหาที่พักในเมืองอื่นหรือวันเข้าพักอื่น
+               <button>ค้นหาที่พัก+เที่ยวบิน</button>
+              </div>
+            
+              <!-- แบบฟอร์มตั๋วเครื่องบิน -->
+              <div id="flightForm" class="form hidden">
+                <h2>จองตั๋วเครื่องบิน</h2>
+                <button>ไป-กลับ</button> <button>ชั้นประหยัด</button>
+                <input type="text">ต้นทาง
+                <input type="text">ปลายทาง
+                <input type="date">วันที่ออกเดิทาง
+                <input type="date">วันที่เดินทางกลับ
+                <input type="number" placeholder="จำนวนคน">
+                
+                <input type="checkbox">จองที่พักด้วย ลดสูงสุด 25%
+                <button>ค้นหาเที่ยวบิน</button>
+              </div>
+            
+              <!-- แบบฟอร์มทัวร์และตั๋วท่องเที่ยว -->
+              <div id="tourForm" class="form hidden">
+                <h2>จองทัวร์และตั๋ว</h2>
+                <input type="text" placeholder="สถานที่">
+                <button>ค้นหา</button>
+              </div>
+            
+              <!-- แบบฟอร์มบริการรับส่งสนามบิน -->
+              <div id="carServiceForm" class="form hidden">
+                <h2>บริการรับส่งสนามบิน</h2>
+                <button>จากสนามบิน</button> <button>ไปสนามบิน</button>
+                <input type="text" placeholder="สนามบินที่ไปรับ">
+                <input type="text" placeholder="สถานที่ไปส่ง">
+                <input type="date"><input type="time">
+                
+                <button>ค้นหา</button>
+              </div>
+              </div>
+            </div>
+
+
+      
+  <!------ที่เที่ยวยอดนิยม----->
+<div class="poppulaBar">
+  <h2>ที่เที่ยวยอดนิยมในประเทศไทย</h2>
+
+  <div class="poppulaplaceone">
+    <div class="poppulaplacetwo">
+
+      <a href="http://google.com" target="_blank" rel="noopener noreferrer"><p>กรุงเทพ</p>
+        <img src="image/bangkok.jpg" alt="bangkok" width="300px" height="200px" >
+      </a>
+
+
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">ชลบุรี
+        <img src="image/photo-beach-town-view-from.jpg" alt="beach" width="300px" height="200px">
+
+      </a>
+
+      <a href="http://google.com" target="_blank" rel="noopener noreferrer">ขอนแก่น
+        <img src="https://cms.dmpcdn.com/travel/2019/11/18/aea40ea0-09d6-11ea-a46b-a993767f0e1c_original.jpg"
+          alt="konkean" width="300px" height="200px">
+      </a>
+
+
+      <a href="#" target="_blank" rel="noopener noreferrer">ภูเก็ต
+        <img src="image/Phuket.jpg" alt="Phuket" width="300px" height="200px">
+      </a>
+
+
+      <a href="#" target="_blank" rel="noopener noreferrer">กาญจนบุรี
+        <img src="image/kanjanabooree.jpg" alt="kanjanabooree" width="300px" height="200px">
+      </a>
+
+
+      <a href="#" target="_blank" rel="noopener noreferrer">นครราชสีมา
+        <img src="image/korach.jpg" alt="korach" width="300px" height="200px">
+      </a>
+
+
+      <a href="#" target="_blank" rel="noopener noreferrer">หัวหิน
+        <img src="image/hua-hin.jpg" alt="huahin" width="300px" height="200px">
+      </a>
+
+    </div>
+    <div class="btn-left">
+      <img src="image/arrow_left_icon.png" alt="arrowlefticon">
+    </div>
+
+    <div class="btn-right">
+      <img src="image/arrow_right_icon.png" alt="arrowrighticon">
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-----promotionลดราคา----->
+
+   
+    <div class="promotion">
+        <h2>promotion Discount</h2>
+
+        <div class="discount">
+          <div class="discounttwo">
+
+           <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+           </a>
+    
+           <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+            </a>
+
+      
+           <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+          </a>
+
+        
+           <a href="#" target="_blank" rel="noopener noreferrer">
+             <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+           </a>
+
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="image/discount-5226409_1280.jpg" alt="discount" width="300px" height="200px">
+            </a>
+        </div>
+            
+
+           <div class="btn-left">
+           <img src="image/arrow_left_icon.png" alt="arrowlefticon">
+          </div>
+        
+           <div class="btn-right">
+            <img src="image/arrow_right_icon.png" alt="arrowrighticon">
+            </div>
+
+        </div>
+
+
+      </div>
+
+      <!---Footer-->
+
+  <div class="NarbarFooter">
+    <div class="Footerone">
+      <ul>ศูนย์ช่วยเหลือ
+        <li>ขอความช่วยเหลือ</li>
+        <li>คำถามพบบ่าย</li>
+        <li>นโยบายความเป็นส่วนตัว</li>
+        <li>นโยบายเกี่ยวกับคุ้กกี้</li>
+        <li>ช้อกำหนดการใช้งาน</li>
+        <li>จัดการตั้งค่าคุกกี้</li>
+        <li>กฏหมายบริการดิจิทัล(สหภาพยุโรป)</li>
+        <li>หลักเกณฑ์ด้านเนื้อนหาและการแจ้งเกี่ยวกับเนื้อหา</li>
+        <li>คำชี้แจงเกี่ยวกับการค้าทาสยุดใหม่</li>
+      </ul>
+
+      <ul>บริษัท
+        <li>เกี่ยวกับเรา</li>
+        <li>สมัครงาน</li>
+        <li>ข่าวประชาสัมพันธ์</li>
+        <li>บล็อกท่องเที่ยว</li>
+        <li>พอยด์แม็กซ์</li>
+
+      </ul>
+      <ul>จุดหมายปลายทาง
+        <li>ประเทศ</li>
+        <li>เส้นทางเที่ยวบินทั้งหมด</li>
+      </ul>
+
+      <ul>เป็นพันธมิตรกับเรา
+        <li>ระบบ YCS สำหรับที่พัก</li>
+        <li>Parner Hub</li>
+        <li>โฆษณาบนอโกด้า</li>
+        <li>แอปฟิลิเอท</li>
+        <li>เอกสาร API โดยอโกด้า</li>
+
+      </ul>
+
+      <ul>แอปอโกด้า
+        <li>แอป IOS</li>
+        <li>แอป Android</li>
+
+      </ul>
+    </div>
+    <!---ส่วนท้าย-->
+  <div class="container-Footer">
+    <div class="Footertwo">
+      
+      <div class="container-Footer">Coryright &copy; 2005 - 2024 Agoda Company Pte. Ltd สงวนลิขสิทธิ์ตามกฎหมาย</div>
+      
+     <div class="container-Footer">Agoda เป๊นส่วนหนึ่งของ Booking Holdings Inc. ผู้ให้บริการท่องเที่ยวออนไลน์และบริการที่เกี่ยวข้องชั้นนำระดับโลก </div>
+    </div>
+  </div>
+  </div>
+</div>
+  <script src="front.js"></script>
+</body>
+
+
+
+</html>

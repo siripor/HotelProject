@@ -1,0 +1,98 @@
+body{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+     margin: 0px;
+    
+   
+   
+}
+
+.form-container{
+    
+    display: flex;
+flex-direction: row;
+  
+   
+}
+
+#fitterdata{
+    
+    display: flex;
+    flex-direction: column;
+    
+    width: 15%;
+    margin: 10px;
+    padding: 15px;
+    height: 100vh;
+  
+}
+#fitterdata span{
+margin-right: 50px;
+padding:5px;
+
+}
+
+#results{
+    
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 30px;
+    width:75%;
+     
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.hotel-container
+{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: white;
+    
+}
+
+#hotelimages{
+     display:flex;
+    flex-direction: column;
+    width: 35%;
+    transition: transform 0.3s ease-in-out;
+    transform-origin:top left;
+  
+
+}
+.hotel-card {
+   overflow: hidden;
+    transition: transform 0.3s ease;
+    background: white;
+    width: 75%;
+    
+}
+.hotel-container:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#ID{
+    display: none;
+}
+
+h4{
+    font-weight: bold;
+    color: red;
+}
+
+#hotelimages:hover {
+   transform:scale(1.7);
+   cursor: zoom-in;
+   float: left;
+   border-radius: 10px;
+ิ}
+ 

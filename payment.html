@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การชำระเงิน</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <div class="formpayment">
+        <h1>ยืนยันการชำระเงิน</h1>
+        
+        <img class="imgqr"src="image/fake qr code.png" alt="">
+            
+            
+
+     <button class="payment" type="submit">ชำระเงิน</button>
+            
+
+        
+        
+        
+    </div>
+    
+    <script> 
+     const btnpayments = document.getElementsByClassName("payment");
+        if (btnpayments.length > 0) {
+            btnpayments[0].addEventListener("click", () => {
+                const mes2 = "ดำเนินการจองเรียบร้อย";
+                alert(mes2);
+                window.location.href = 'index.html';
+            });
+        }
+      
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

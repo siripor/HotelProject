@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="showdata.css">
+   
+</head>
+<body>
+    <div class="form-container">
+      
+          
+        <div id="fitterdata">
+          
+          <h4>ส่วนนี้อยู่ระหว่างการปรับปรุงคะ</h4>
+          <p>ข้อมูลที่กรอง</p>
+          <span><input type="checkbox" name="Beach" id="Beach">ติดชายทะเล</span>
+            <span><input type="checkbox" name="Pet" id="Pet">สัตว์เลี้ยงพักได้</span>
+            <span><input type="checkbox" name="Disabled-person" id="DisabledPerson">บริการสำหรับคนพิการ</span>
+                              
+            <span>
+              <p>ราคาห้องต่อคืน</p>
+              <input type="range" name="" id="range" min="300" max="100,000"></span>
+          </span>
+          
+            <p>ลักษณะห้องพัก</p>
+            <span><input type="checkbox" name="" id="">Family Lodge</span>
+            <span><input type="checkbox" name="" id="">Wooden Cabin</span>
+            <span><input type="checkbox" name="" id="">superior room</span>
+           
+           <div> 
+            <button type="button" id="Filter">ยืนยันข้อมูล</button>
+           <button type="reset">ล้างข้อมูล</button>
+          </div>
+         
+        </div>
+        <div id="results"> แสดงข้อมูล</div>
+     </div>
+    <div id="DataFilter" class="results-container">
+      
+      </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="Showdata.js"></script>
+</body>
+</html> 
